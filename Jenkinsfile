@@ -1,9 +1,9 @@
 pipeline {
 agent any 
 stages {
-stage ("got"){
+stage ("git"){
 steps {
-echo "hello"
+git branch: 'main', credentialsId: 'github', url: 'https://github.com/nkjohn7/nk1/'
 }
 }
 }
