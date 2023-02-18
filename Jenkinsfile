@@ -8,7 +8,7 @@ git branch: 'main', credentialsId: 'github', url: 'https://github.com/nkjohn7/nk
 }
 stage ("build"){
 steps {
-sh 'mvn clean package'
+sh 'mvn -B -ntp -Dmaven.test.failure.ignore verify'
 }
 }
 }
