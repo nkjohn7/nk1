@@ -8,7 +8,8 @@ git branch: 'main', credentialsId: 'github', url: 'https://github.com/nkjohn7/nk
 }
 stage ("build"){
 steps {
-sh 'mvn -B -ntp -Dmaven.test.failure.ignore verify'
+def mvnHome = tool name: '3.6.3', type: 'maven'
+sh "${mvnHome}/bin/mvn -version"
 }
 }
 }
